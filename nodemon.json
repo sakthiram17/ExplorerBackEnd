@@ -1,9 +1,0 @@
-{
-    "env":{
-        "DB_USER" : "sakthi",
-        "DB_PASSWORD":"sakthi123",
-        "DB_Name" : "test",
-        "JWT_KEY" :"supersecret_dont_share",
-        "API_KEY" : "s4xqDXTaqJlwQXtKZarOZ9EfXG1NRVp9pLFNGhKUTgc"
-    }
-}
