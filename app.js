@@ -49,7 +49,7 @@ mongoose
       `mongodb+srv://sakthi:sakthi123@cluster0.obhkn.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(const PORT = process.env.PORT ||8080
+    app.listen(process.env.PORT ||8080)
  
   })
   .catch(err => {
