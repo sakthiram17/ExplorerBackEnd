@@ -46,7 +46,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-      `mongodb+srv://sakthi:sakthi123@cluster0.obhkn.mongodb.net/?retryWrites=true&w=majority`
+      `mongodb+srv://sakthi:sakthi123@cluster0.obhkn.mongodb.net/test?retryWrites=true&w=majority`
   )
   .then(() => {
     app.listen(process.env.PORT ||8080)
