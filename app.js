@@ -43,13 +43,13 @@ app.use((error, req, res, next) => {
   res.status(error.code || 500);
   res.json({ message: error.message || 'An unknown error occurred!' });
 });
-const PORT = process.env.PORT || 80;
+
 mongoose
   .connect(
-    `mongodb+srv://sakthi:sakthi123@cluster0.obhkn.mongodb.net/?retryWrites=true&w=majority`
+      `mongodb+srv://sakthi:sakthi123@cluster0.obhkn.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(PORT);
+    app.listen(const PORT = process.env.PORT ||8080
  
   })
   .catch(err => {
