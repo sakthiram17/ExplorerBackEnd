@@ -6,7 +6,7 @@ async function getCoordinates(address){
   let url = `https://geocode.search.hereapi.com/v1/geocode?q=${address}&apiKey=${apiKey}`
 
   const response = await axios.get(url)
-
+  console.log(response)
   
   const data = response.data;
  if(!data.Response)
