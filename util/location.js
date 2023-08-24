@@ -3,9 +3,8 @@ const axios = require('axios');
 const HttpError = require('../models/http-error')
 const apiKey = process.env.API_KEY
 async function getCoordinates(address){
-  let url = `https://geocoder.ls.hereapi.com/6.2/geocode.json?apiKey=${apiKey}&searchtext=${address}`
-  let url1 = "https://geocode.ls.hereapi.com/6.2/geocode.json?searchtext="+address+"&gen=9&apiKey="+apiKey;
-
+  let url = `https://geocode.search.hereapi.com/v1/geocode?q=240+Washington+St.%2C+Boston&limit=4&apiKey=${API_KEY}`
+  
   const response = await axios.get(url)
 
   const data = response.data;
@@ -14,9 +13,17 @@ async function getCoordinates(address){
      const error = new HttpError('could not find the locaton for given address',422)
     throw error
   }
+  
   //console.log(data.Response.View[0].Result[0].Location.DisplayPosition.Latitude)
  // console.log(data.Response.View[0].Result[0].Location.DisplayPosition.Longitude)
-  let coordinates = data.Response.View[0].Result[0].Location.DisplayPosition;
+ console.log(data.Response) 
+ let lat = data.items[0].position.lat;
+ let lang = data.Response.items[0].position.lng;
+ let coordinates = {
+  Latitude:lat,
+  Longitude:lang
+ }
+
  
   return coordinates
 }
