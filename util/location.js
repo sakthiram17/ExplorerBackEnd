@@ -3,7 +3,7 @@ const axios = require('axios');
 const HttpError = require('../models/http-error')
 const apiKey = process.env.API_KEY
 async function getCoordinates(address){
-  let url = `https://geocode.search.hereapi.com/v1/geocode?${address}&apiKey=${apiKey}`
+  let url = `https://geocode.search.hereapi.com/v1/geocode?q=${address}&apiKey=${apiKey}`
   
   try{
   const response = await axios.get(url)
