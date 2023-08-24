@@ -19,7 +19,7 @@ async function getCoordinates(address){
  // console.log(data.Response.View[0].Result[0].Location.DisplayPosition.Longitude)
  console.log(data.Response) 
  let lat = data.items[0].position.lat;
- let lang = data.Response.items[0].position.lng;
+ let lang = data.items[0].position.lng;
  let coordinates = {
   Latitude:lat,
   Longitude:lang
