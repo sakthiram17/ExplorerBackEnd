@@ -4,15 +4,10 @@ const HttpError = require('../models/http-error')
 const apiKey = process.env.API_KEY
 async function getCoordinates(address){
   let url = `https://geocode.search.hereapi.com/v1/geocode?q=${address}&apiKey=${apiKey}`
-  
-  try{
+
   const response = await axios.get(url)
-  }
-  catch(err)
-  {
-    console.log(err)
-    throw new HttpError('Something wrong while fetching data',422)
-  }
+
+  
   const data = response.data;
  if(!data.Response)
    {
