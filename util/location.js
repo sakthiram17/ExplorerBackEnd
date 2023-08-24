@@ -10,6 +10,7 @@ async function getCoordinates(address){
   }
   catch(err)
   {
+    console.log(err)
     throw new HttpError('Something wrong while fetching data',422)
   }
   const data = response.data;
