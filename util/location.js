@@ -9,15 +9,7 @@ async function getCoordinates(address){
   console.log(response)
   
   const data = response.data;
- if(!data.Response)
-   {
-     const error = new HttpError('could not find the locaton for given address',422)
-    throw error
-  }
-  
   //console.log(data.Response.View[0].Result[0].Location.DisplayPosition.Latitude)
- // console.log(data.Response.View[0].Result[0].Location.DisplayPosition.Longitude)
- console.log(data.Response) 
  let lat = data.items[0].position.lat;
  let lang = data.items[0].position.lng;
  let coordinates = {
